@@ -15,7 +15,7 @@ The dataset consists of a CSV file with 53,925 rows (including the header).
 
 Each row contains the following fields concatenated with `","` :
 - `steamID64`, which [uniquely identify][steamid-doc] Steam accounts,
-- `summary_rep`, either 'CAUTION' or 'BANNED',
+- `summary_rep`, either `CAUTION` or `BANNED`,
 - `full_rep`, with 52 possible values, concatenated with `";"`.
 
 `full_rep` can contain:
