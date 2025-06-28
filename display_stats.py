@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-FNAME = "SteamRep_Profiles_BannedCaution_2024.csv"
+FNAME = "data/SteamRep_Profiles_BannedCaution_2024.csv"
 FLAG_SEPARATOR = ";"
 
 
