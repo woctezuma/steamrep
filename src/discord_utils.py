@@ -1,7 +1,9 @@
 import json
 from pathlib import Path
 
-DISCORD_FNAME = "data/profiles.json"
+from src.utils import FOLDER_NAME
+
+DISCORD_FNAME = f"{FOLDER_NAME}/profiles.json"
 
 
 def load_discord_profiles() -> dict:

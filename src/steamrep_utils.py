@@ -1,7 +1,9 @@
 import csv
 from pathlib import Path
 
-STEAMREP_FNAME = "data/SteamRep_Profiles_BannedCaution_2024.csv"
+from src.utils import FOLDER_NAME
+
+STEAMREP_FNAME = f"{FOLDER_NAME}/SteamRep_Profiles_BannedCaution_2024.csv"
 
 
 def get_steam_ids_from_steamrep(
