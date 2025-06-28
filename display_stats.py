@@ -1,29 +1,20 @@
-import csv
-from pathlib import Path
+from src.steamrep_utils import get_steam_ids_from_steamrep
 
-FNAME = "data/SteamRep_Profiles_BannedCaution_2024.csv"
 FLAG_SEPARATOR = ";"
 
 
 def main() -> None:
-    steam_ids = set()
-    summary_rep = set()
+    banned_steam_ids, warned_steam_ids = get_steam_ids_from_steamrep()
+
+    steam_ids = set(banned_steam_ids.keys()).union(warned_steam_ids.keys())
+
     full_rep = set()
-
-    with Path(FNAME).open() as f:
-        steamrep_reader = csv.reader(f)
-
-        next(steamrep_reader)  # Skip the header row
-
-        for row in steamrep_reader:
-            steam_ids.add(row[0])
-            summary_rep.add(row[1])
-
-            for flag in row[2].split(FLAG_SEPARATOR):
+    for d in [banned_steam_ids, warned_steam_ids]:
+        for v in d.values():
+            for flag in v.split(FLAG_SEPARATOR):
                 full_rep.add(flag)
 
     print(f"Steam IDs: {len(steam_ids)}")
-    print(f"Summary Reputation: {len(summary_rep)} -> {summary_rep}")
     print(f"Full Reputation: {len(full_rep)} -> {sorted(full_rep)}")
 
 
