@@ -74,6 +74,18 @@ UHC BANNED
 UTC BANNED
 ```
 
+## Usage
+
+To display stats about the dataset, run:
+```sh
+python display_stats.py
+```
+
+To filter Discord profiles (in `data/profiles.json`) to look for bans and cautions, run:
+```sh
+python filter_members.py
+```
+
 [steamrep-homepage]: <https://steamrep.com/>
 [steamrep-csv]: <https://steamrep.com/data/2024/SteamRep_Profiles_BannedCaution_2024_csv.zip>
 [steamid-doc]: <https://developer.valvesoftware.com/wiki/SteamID>
