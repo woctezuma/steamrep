@@ -7,7 +7,7 @@ DISCORD_FNAME = f"{FOLDER_NAME}/profiles.json"
 
 
 def load_discord_profiles() -> dict:
-    with Path(DISCORD_FNAME).open("r") as file:
+    with Path(DISCORD_FNAME).open("r", encoding="utf8") as file:
         return json.load(file)
 
 
